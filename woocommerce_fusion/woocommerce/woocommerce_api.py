@@ -56,7 +56,7 @@ class WooCommerceResource(Document):
 		]
 
 		if len(wc_api_list) == 0:
-			frappe.throw(_("At least one WooCommerce Server should be Enabled"), SyncDisabledError)
+			# frappe.throw(_("At least one WooCommerce Server should be Enabled"), SyncDisabledError)
 
 		return wc_api_list
 
