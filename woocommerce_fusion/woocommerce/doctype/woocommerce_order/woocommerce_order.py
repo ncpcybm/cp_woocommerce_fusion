@@ -68,7 +68,7 @@ class WooCommerceOrder(WooCommerceResource):
 					consumer_key=server.api_consumer_key,
 					consumer_secret=server.api_consumer_secret,
 					version="wc/v3",
-					timeout=40,
+					timeout=60,
 				),
 				woocommerce_server_url=server.woocommerce_server_url,
 				woocommerce_server=server.name,

@@ -96,7 +96,7 @@ class SynchroniseItemPrice(SynchroniseWooCommerce):
 				.on(iwc.parent == ip.item_code)
 				.inner_join(item)
 				.on(item.name == ip.item_code)
-				.select(ip.name, ip.item_code, ip.price_list_rate, iwc.woocommerce_server, iwc.woocommerce_id)
+				.select(ip.name, ip.item_code, ip.price_list_rate, ip.sale_price, iwc.woocommerce_server, iwc.woocommerce_id)
 				.where(Criterion.all(and_conditions))
 				.run(as_dict=True)
 			)
@@ -121,6 +121,9 @@ class SynchroniseItemPrice(SynchroniseWooCommerce):
 					if self.item_price_doc and self.item_price_doc.price_list == self.wc_server.price_list
 					else item_price.price_list_rate
 				)
+
+
+
 				# Handle blank string for regular_price
 				if not wc_product.regular_price:
 					wc_product.regular_price = 0
@@ -132,7 +135,14 @@ class SynchroniseItemPrice(SynchroniseWooCommerce):
 				)
 				if wc_product_regular_price != price_list_rate:
 					wc_product.regular_price = price_list_rate
+					
+					wc_product.sale_price = 150
+					
 					wc_product.save()
+				
+				frappe.log_error("WooCommerce Price List Sync")
+				frappe.log_error("WooCommerce ", f"Product Data: \n{str(wc_product.as_dict())}")
+
 			except Exception:
 				error_message = f"{frappe.get_traceback()}\n\n Product Data: \n{str(wc_product.as_dict())}"
 				frappe.log_error("WooCommerce Error: Price List Sync", error_message)

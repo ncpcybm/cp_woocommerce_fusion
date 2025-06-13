@@ -97,13 +97,15 @@
    "fieldtype": "Data",
    "in_list_view": 1,
    "label": "Product Name",
+   "read_only": 1,
    "reqd": 1
   },
   {
    "fieldname": "slug",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Slug"
+   "label": "Slug",
+   "read_only": 1
   },
   {
    "fieldname": "permalink",
@@ -115,24 +117,28 @@
    "description": "The date the product was created, in the site's timezone",
    "fieldname": "woocommerce_date_created",
    "fieldtype": "Datetime",
+   "hidden": 1,
    "label": "Date Created",
    "read_only": 1
   },
   {
    "fieldname": "woocommerce_date_created_gmt",
    "fieldtype": "Datetime",
+   "hidden": 1,
    "label": "Date Created (GMT)",
    "read_only": 1
   },
   {
    "fieldname": "woocommerce_date_modified",
    "fieldtype": "Datetime",
+   "hidden": 1,
    "label": "Date Modified",
    "read_only": 1
   },
   {
    "fieldname": "woocommerce_date_modified_gmt",
    "fieldtype": "Datetime",
+   "hidden": 1,
    "label": "Date Modified (GMT)",
    "read_only": 1
   },
@@ -225,6 +231,7 @@
    "description": "Shows if the product can be bought",
    "fieldname": "purchasable",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Purchasable",
    "read_only": 1
   },
@@ -246,6 +253,7 @@
    "default": "0",
    "fieldname": "downloadable",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Downloadable"
   },
   {
@@ -314,11 +322,13 @@
   {
    "fieldname": "weight",
    "fieldtype": "Float",
+   "hidden": 1,
    "label": "Weight"
   },
   {
    "fieldname": "dimensions",
    "fieldtype": "JSON",
+   "hidden": 1,
    "label": "Dimensions",
    "read_only": 1
   },
@@ -326,6 +336,7 @@
    "default": "0",
    "fieldname": "shipping_required",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Shipping Required",
    "read_only": 1
   },
@@ -333,18 +344,21 @@
    "default": "0",
    "fieldname": "shipping_taxable",
    "fieldtype": "Check",
+   "hidden": 1,
    "label": "Shipping Taxable",
    "read_only": 1
   },
   {
    "fieldname": "shipping_class",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Shipping Class",
    "read_only": 1
   },
   {
    "fieldname": "shipping_class_id",
    "fieldtype": "Data",
+   "hidden": 1,
    "label": "Shipping Class ID",
    "read_only": 1
   },
@@ -387,7 +401,8 @@
   {
    "fieldname": "parent_id",
    "fieldtype": "Int",
-   "label": "Parent ID"
+   "label": "Parent ID",
+   "read_only": 1
   },
   {
    "fieldname": "categories",
@@ -464,6 +479,7 @@
   {
    "fieldname": "linked_products_tab",
    "fieldtype": "Tab Break",
+   "hidden": 1,
    "label": "Linked Products"
   },
   {
@@ -492,7 +508,7 @@
  "index_web_pages_for_search": 1,
  "is_virtual": 1,
  "links": [],
- "modified": "2025-04-10 13:23:00.632549",
+ "modified": "2025-06-13 16:56:29.416042",
  "modified_by": "Administrator",
  "module": "WooCommerce",
  "name": "WooCommerce Product",

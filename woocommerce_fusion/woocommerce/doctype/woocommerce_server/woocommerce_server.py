@@ -40,7 +40,20 @@ class WooCommerceServer(Document):
 		self.validate_so_status_map()
 		self.validate_item_map()
 		self.validate_reserved_stock_setting()
+		self.validate_primary_flag()
 
+	def validate_primary_flag(self):
+		if self.is_primary:
+			existing = frappe.db.exists(
+				"WooCommerce Server",
+				{
+					"is_primary": 1,
+					"name": ["!=", self.name]
+				}
+			)
+			if existing:
+				frappe.throw(_("Only one WooCommerce Server can be marked as Primary. '{0}' is already marked as primary.").format(existing))
+				
 	def validate_so_status_map(self):
 		"""
 		Validate Sales Order Status Map to have unique mappings

@@ -16,7 +16,7 @@ frappe.ui.form.on('WooCommerce Order', {
 	},
 	sync_sales_order: function(frm) {
 		// Sync this WooCommerce Order
-		frappe.dom.freeze(__("Sync Order with ERPNext..."));
+		frappe.dom.freeze(__("Sync Order with ERP..."));
 		frappe.call({
 			method: "woocommerce_fusion.tasks.sync_sales_orders.run_sales_order_sync",
 			args: {

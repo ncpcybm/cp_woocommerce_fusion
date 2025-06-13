@@ -11,6 +11,7 @@
   "section_break_yuyb",
   "enable_sync",
   "woocommerce_server_url",
+  "is_primary",
   "column_break_ikke",
   "api_consumer_key",
   "api_consumer_secret",
@@ -527,11 +528,17 @@
    "fieldname": "sync_product_gallery",
    "fieldtype": "Check",
    "label": "Sync Product Gallery"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_primary",
+   "fieldtype": "Check",
+   "label": "Is Primary"
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-04-10 15:07:57.005240",
+ "modified": "2025-06-11 09:18:02.139595",
  "modified_by": "Administrator",
  "module": "WooCommerce",
  "name": "WooCommerce Server",
